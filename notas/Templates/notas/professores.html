@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Professores</title>
+</head>
+<body>
+    <h1>Professores</h1>
+    <ul>
+        {% for professor in professores %}
+            <li>{{ professor.nome }} - CPF: {{ professor.cpf }} - E-mail: {{ professor.email }}</li>
+            
+        {% endfor %}
+    </ul>
+</body>
+</html>

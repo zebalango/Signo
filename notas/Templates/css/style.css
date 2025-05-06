@@ -1,0 +1,17 @@
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination .step-links {
+    font-size: 16px;
+}
+
+.pagination .step-links a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.pagination .step-links .current {
+    font-weight: bold;
+}

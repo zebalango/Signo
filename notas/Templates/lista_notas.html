@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestão de Notas</title>
+</head>
+<body>
+    <h1>Notas dos Alunos</h1>
+    <form method="get">
+        <label for="aluno">Aluno:</label>
+        <input type="text" name="aluno" id="aluno" value="{{ aluno }}" placeholder="Pesquisar por Aluno">
+
+        <label for="disciplina">Disciplina:</label>
+        <input type="text" name="disciplina" id="disciplina" value="{{ disciplina }}" placeholder="Pesquisar por Disciplina">
+
+        <label for="valor">Valor:</label>
+        <input type="text" name="valor" id="valor" value="{{ valor }}" placeholder="Pesquisar por Nota">
+
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Disciplina</th>
+                <th>Nota</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+            <tr>
+                <td>{{ nota.aluno.nome }}</td>
+                <td>{{ nota.disciplina.nome }}</td>
+                <td>{{ nota.valor }}</td>
+                <td>
+                    <a href="{% url 'editar_nota' nota.pk %}">Editar</a>
+                    <a href="{% url 'excluir_nota' nota.pk %}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

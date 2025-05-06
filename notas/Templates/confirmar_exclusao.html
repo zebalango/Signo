@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar Exclusão</title>
+</head>
+<body>
+    <h1>Você tem certeza que deseja excluir esta nota?</h1>
+    <p>{{ nota.aluno.nome }} - {{ nota.disciplina.nome }} - {{ nota.valor }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, Excluir</button>
+    </form>
+    <br>
+    <a href="{% url 'lista_notas' %}">Cancelar</a>
+</body>
+</html>

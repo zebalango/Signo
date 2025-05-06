@@ -1,0 +1,43 @@
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration:none;
+}
+    /* Customizando o fundo da página */
+    body {
+        background-color: #f8f9fa;
+    }
+
+    /* Personalizando o título */
+    h1 {
+        color: #007bff;
+    }
+
+    .card {
+        margin-top: 25px;
+    }
+
+    /* Estilo para o rodapé */
+    footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer p {
+        margin: 0;
+        text-align: center;
+    }
+
+    

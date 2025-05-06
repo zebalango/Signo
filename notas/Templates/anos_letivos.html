@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ano Letivo</title>
+</head>
+
+<body>
+    {% csrf_token %}
+    <h1>Ano Letivo</h1>
+    <ul>
+        {% for ano in anos %}
+            <li>{{ ano.ano_inicio }}/{{ ano.ano_fim }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

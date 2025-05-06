@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestão de Notas</title>
+</head>
+<body>
+    <h1>Notas dos Alunos</h1>
+    <a href="{% url 'nova_nota' %}">Adicionar Nova Nota</a>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Disciplina</th>
+                <th>Nota</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+            <tr>
+                <td>{{ nota.aluno.nome }}</td>
+                <td>{{ nota.disciplina.nome }}</td>
+                <td>{{ nota.valor }}</td>
+                <td>
+                    <a href="{% url 'editar_nota' nota.pk %}">Editar</a>
+                    <a href="{% url 'excluir_nota' nota.pk %}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notas de {{ aluno.nome }}</title>
+</head>
+<body>
+    <h1>Notas de {{ aluno.nome }}</h1>
+    
+    {% if notas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nota in notas %}
+                    <tr>
+                        <td>{{ nota.disciplina.nome }}</td>
+                        <td>{{ nota.nota }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Este aluno ainda não tem notas registradas.</p>
+    {% endif %}
+    <a href="#">Voltar para a lista de alunos</a>
+</body>
+</html>

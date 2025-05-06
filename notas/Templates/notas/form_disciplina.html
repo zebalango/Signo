@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Disciplina</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Editar Disciplina{% else %}Nova Disciplina{% endif %}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <button type="submit">Salvar</button>
+    </form>
+    
+    <br>
+    <a href="#">Voltar para a lista de disciplinas</a>
+</body>
+</html>

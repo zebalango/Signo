@@ -1,0 +1,53 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  #wrapper {
+    display: flex;
+    height: 100vh;
+  }
+  
+  #sidebar {
+    width: 220px;
+    background-color: #343a40;
+    min-height: 100vh;
+  }
+  
+  #page-content {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .card .card-text {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  canvas {
+    max-width: 100%;
+  }
+
+  /* Tema dark */
+.dark-theme {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.dark-theme #sidebar {
+  background-color: #111;
+}
+
+.dark-theme .card {
+  background-color: #2c3034;
+  color: #fff;
+}
+
+.dark-theme .list-group-item {
+  background-color: #2c3034;
+  color: #fff;
+}
+
+.dark-theme canvas {
+  background-color: #2c3034;
+}

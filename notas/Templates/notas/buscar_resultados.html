@@ -1,0 +1,18 @@
+
+
+{% block 'body' %}
+  <h2>Resultados para Alunos(as) da "{{ query }}" ª Classe </h2>
+  {% if resultados %}
+    <ul class="list-group">
+      {% for aluno in resultados %}
+        <li class="list-group-item">
+        Aluno:  {{ aluno.nome}} - Curso: {{ aluno.curso }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">Nenhum resultado encontrado.</p>
+  {% endif %}
+{% endblock %}
+
+

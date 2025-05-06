@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas de {{ aluno.nome }}</title>
+</head>
+<body>
+    <h1>Notas de {{ aluno.nome }}</h1>
+    <h2>Disciplinas</h2>
+    <ul>
+        {% for nota in notas %}
+            <li>{{ nota.disciplina.nome }}: {{ nota.nota }}</li>
+        {% endfor %}
+    </ul>
+    <h2><a href="{% url 'gerar_relatorio' %}">Gerar Relatório de Notas (PDF)</a></h2>
+</body>
+</html>

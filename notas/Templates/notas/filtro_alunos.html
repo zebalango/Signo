@@ -1,0 +1,25 @@
+<h1>Filtrar Alunos por Curso</h1>
+
+<form method="get">
+    <label for="curso">Selecione o curso:</label>
+    <select name="curso" id="curso">
+        <option value="">-- Escolha --</option>
+        {% for curso in cursos %}
+            <option value="{{ curso.id }}" {% if curso.id == curso_selecionado %}selected{% endif %}>
+                {{ curso.nome }}
+            </option>
+        {% endfor %}
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if alunos %}
+    <h2>Alunos do curso selecionado:</h2>
+    <ul>
+        {% for aluno in alunos %}
+            <li>{{ aluno.nome }} ({{ aluno.matricula }})</li>
+        {% endfor %}
+    </ul>
+{% elif curso_selecionado %}
+    <p><em>Nenhum aluno encontrado para esse curso.</em></p>
+{% endif %}

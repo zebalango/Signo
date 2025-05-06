@@ -1,0 +1,12 @@
+<h1>Alunos por Curso</h1>
+
+{% for curso in cursos %}
+    <h2>{{ curso.nome }}</h2>
+    <ul>
+        {% for aluno in curso.alunos.all %}
+            <li>{{ aluno.nome }} (Matrícula: {{ aluno.matricula }})</li>
+        {% empty %}
+            <li>Nenhum aluno neste curso.</li>
+        {% endfor %}
+    </ul>
+{% endfor %}

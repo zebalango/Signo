@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Frequência de {{ aluno.nome }}</title>
+</head>
+<body>{% csrf_token %}
+    <h1>Frequência de {{ aluno.nome }}</h1>
+    <ul>
+        {% for frequencia in frequencias %}
+            <li>{{ frequencia.disciplina.nome }} - {{ frequencia.data }} - 
+            {% if frequencia.presente %}
+                Presente
+            {% else %}
+                Ausente
+            {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
